@@ -1,28 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import FriendsList from "./components/FriendsList";
 
 function App() {
   return (
     <Router>
+      <Link to="/login">Login</Link>
+      <Link to="/friends">Friends List</Link>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            {/* <li>
-              <Link to="/friends">Friend List</Link>
-            </li> */}
-          </ul>
-        </nav>
-        <Switch>
-          {/* <PrivateRoute exact path="/friends">
-            <friends />
-          </PrivateRoute> */}
-          <Route path="/login" component={Login} />
-        </Switch>
+        <switch>
+          <Route exact path="/login" component={Login} />
+          <PrivateRoute path="/friends" component={FriendsList} />
+        </switch>
       </div>
     </Router>
   );
