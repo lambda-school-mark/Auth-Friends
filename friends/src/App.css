@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+  border-bottom: 2px solid #a4a9ad;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link {
+  text-decoration: none;
+  border: 1px solid #a4a9ad;
+  border-radius: 2px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  color: #23001e;
+  background-color: #ffba49;
+  font-family: "Permanent Marker", cursive;
+}
+
+.button img {
+}
+
+.displayFriends {
+  font-family: "Permanent Marker", cursive;
+}
+
+.displayFriends p {
+  color: #3e92cc;
+}
+
+.displayFriends button {
+  text-decoration: none;
+  border: 1px solid #a4a9ad;
+  border-radius: 2px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  color: #23001e;
+  background-color: #ffba49;
+  font-family: "Permanent Marker", cursive;
+}
+
+.friendInput {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friendInput input {
+  max-width: 300px;
+  margin: 8px;
+  border: 1px solid #23001e;
+  border-radius: 2px;
+}
+
+.friendInput button {
+  text-decoration: none;
+  border: 1px solid #a4a9ad;
+  border-radius: 2px;
+  padding: 2px 6px;
+  margin-left: 6px;
+  color: #23001e;
+  background-color: #ffba49;
+  font-family: "Permanent Marker", cursive;
+}
