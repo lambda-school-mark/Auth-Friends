@@ -8,8 +8,14 @@ import FriendsList from "./components/FriendsList";
 function App() {
   return (
     <Router>
-      <Link to="/login">Login</Link>
-      <Link to="/friends">Friends List</Link>
+      <nav className="navbar">
+        <Link className="link" to="/login">
+          Login
+        </Link>
+        <Link className="link" to="/friends">
+          Friends List
+        </Link>
+      </nav>
       <div className="App">
         <switch>
           <Route exact path="/login" component={Login} />

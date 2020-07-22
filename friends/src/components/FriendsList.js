@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const FriendsList = () => {
   const initialState = {
-    id: Date.now(),
+    id: () => {},
     name: "",
     age: "",
     email: "",
@@ -27,7 +27,10 @@ const FriendsList = () => {
   };
 
   const onChange = (e) => {
-    setNewFriend({ ...newFriend, [e.target.name]: e.target.value });
+    setNewFriend({
+      ...newFriend,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const addNewFriend = (e) => {
@@ -51,7 +54,15 @@ const FriendsList = () => {
 
   return (
     <div>
-      <form onSubmit={addNewFriend}>
+      {friendsList.map((friend) => (
+        <div className="displayFriends" key={friend.id}>
+          <h2> {friend.name}</h2>
+          <p>Age: {friend.age}</p>
+          <p>Email: {friend.email}</p>
+          <button onClick={() => deleteFriend(friend.id)}>Delete</button>
+        </div>
+      ))}
+      <form className="friendInput" onSubmit={addNewFriend}>
         <input
           name="name"
           type="text"
@@ -75,14 +86,6 @@ const FriendsList = () => {
         />
         <button>Add Friend</button>
       </form>
-      {friendsList.map((friend) => (
-        <div key={friend.id}>
-          <h2>{friend.name}</h2>
-          <p>{friend.age}</p>
-          <p>{friend.email}</p>
-          <button onClick={() => deleteFriend(friend.id)}>Delete</button>
-        </div>
-      ))}
     </div>
   );
 };
